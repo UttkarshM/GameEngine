@@ -11,6 +11,6 @@ add_library(includes
 )
 include_directories(resources)
 target_include_directories(includes PUBLIC ${PROJECT_SOURCE_DIR}/external/glfw/include ${PROJECT_SOURCE_DIR}/external/glad/include )
-target_link_libraries(includes PRIVATE glfw glad)
+target_link_libraries(includes PRIVATE glfw glad glm)
 
 

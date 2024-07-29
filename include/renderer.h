@@ -10,5 +10,7 @@
 class Renderer {
 public:
   void Draw(std::unique_ptr<VAO> vao, EBO &ebo, std::unique_ptr<Shader> shader);
+  void Draw(std::unique_ptr<VAO> vao,std::unique_ptr<EBO>ebo,std::unique_ptr<Shader>GLshader);
+  void render(int count) const;
   void ClearBuffer();
 };
