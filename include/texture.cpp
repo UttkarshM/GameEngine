@@ -9,7 +9,12 @@ Texture::Texture(const std::string& path)
 :ID(0),m_FilePath(path),m_LocalBuffer(nullptr),width(0),height(0),BPP(0)
 {
   stbi_set_flip_vertically_on_load(1);
-  m_LocalBuffer = stbi_load(path.c_str(),&width,&height,&BPP,4);
+  m_LocalBuffer = stbi_load(path.c_str(),&width,&height,&BPP,4);// 4 color channels
+                                                                //
+  if(!m_LocalBuffer){
+    std::cout<<"failed to load the texture"<<std::endl;
+  }
+  /* std::cout<<m_LocalBuffer<<std::endl; */
 
   glGenTextures(1,&ID);
   glActiveTexture(GL_TEXTURE0);

@@ -28,3 +28,6 @@ void Renderer::render(int count) const{
 void Renderer::ClearBuffer(){
   glClear(GL_COLOR_BUFFER_BIT);
 }
+Renderer::~Renderer(){
+  
+}

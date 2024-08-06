@@ -3,7 +3,7 @@
 #include"layout.h"
 /* #include <glad/glad.h> */
 
-/* #include <GLFW/glfw3.h> */
+#include <GLFW/glfw3.h>
 class VAO{
     /* private: */
   public:
@@ -15,4 +15,5 @@ class VAO{
         void addBuffer(const VBO& VBO,const layout& layout);
         void Bind() const;
         void Unbind() const;
+        ~VAO();
 };

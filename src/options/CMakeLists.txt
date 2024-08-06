@@ -3,13 +3,16 @@ set(
   init.cpp 
   triangle.cpp
   Window.cpp
+  BumpAllocator.cpp
+  # gl_renderer.cpp
   # test.cpp
 )
 set(
   Interface_files
-  Interfaces/includes.h
-  Interfaces/init.h
-  Interfaces/shape.h
+  includes.h
+  init.h
+  shape.h
+  
 )
 
 add_library(Options STATIC 
@@ -22,5 +25,5 @@ target_include_directories(Options PUBLIC ${PROJECT_SOURCE_DIR}/external/glfw/in
   ${PROJECT_SOURCE_DIR}/include/
   )
 
-target_link_libraries(Options PRIVATE glad glfw includes glm)
+target_link_libraries(Options PRIVATE glad glfw includes glm stb)
 

@@ -19,10 +19,10 @@ Shader::Shader(const char* vertexFile,const char* fragmentFile){
 	std::string fragmentCode = get_file_contents(fragmentFile);
 
 	const char* vertexShaderCode = vertexCode.c_str();
-  std::cout<<vertexShaderCode<<std::endl;
+  /* std::cout<<vertexShaderCode<<std::endl; */
 	
   const char* fragmentShaderCode = fragmentCode.c_str();
-  std::cout<<fragmentShaderCode<<std::endl;
+  /* std::cout<<fragmentShaderCode<<std::endl; */
   
   ID = glCreateProgram();
 	
@@ -96,4 +96,7 @@ void Shader::activate(){
 
 void Shader::Delete(){
 	glDeleteProgram(ID);
+}
+Shader::~Shader(){
+  Delete();
 }

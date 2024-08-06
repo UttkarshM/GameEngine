@@ -1,9 +1,14 @@
 #include "VAO.h"
+#include "VBO.h"
 #include "renderer.h"
 
 
 VAO::VAO(){
     glGenVertexArrays(1, &ID);
+}
+VAO::~VAO(){
+  Unbind();
+  glDeleteVertexArrays(1,&ID);
 }
 void VAO::deleteV() const{
     glDeleteVertexArrays(1, &ID);

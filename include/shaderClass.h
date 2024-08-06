@@ -15,6 +15,7 @@ std::string get_file_content(const char *filename);
 class Shader {
 public:
   Shader(const char *vertexFile, const char *fragmentFile);
+  ~Shader();
   void activate();
   int GetUniformNumber(std::string Uname);
   void UseUniformNumber(std::string name, float v0, float v1, float v2,

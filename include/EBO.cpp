@@ -8,6 +8,7 @@ EBO::EBO(const unsigned int* data,unsigned int count)
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,count*sizeof(GLuint),data,GL_STATIC_DRAW);
 }
 EBO::~EBO(){
+  UnBind();
     glDeleteBuffers(1,&ID);
 }
 void EBO::Bind(){
